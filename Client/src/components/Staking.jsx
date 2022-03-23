@@ -79,7 +79,7 @@ const Payment = () => {
  })
 };
   return (
-    <div className="  flex-col flex space-y-5 justify-center items-center  ">
+    <div className="  flex-col flex space-y-4 justify-center items-center  ">
       <div
         onClick={() => pop()}
         className="  w-[18rem] px-[6.5rem] m-4 py-[0.5rem]  bg-blue-500 rounded-lg text-gray-100    font-semibold cursor-pointer"

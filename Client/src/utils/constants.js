@@ -1,4 +1,4 @@
-import abi from "./Transactions.json";
+import abi from "./KokoToken.json";
 
-export const contractAddress = "0xfCCF80344a668b72ac4Be23513F0E9E4a35C84fA";
+export const contractAddress = "0xCEf919F936357cf177BC4B23Bc7b6C58cE82c616";
 export const contractABI = abi.abi;

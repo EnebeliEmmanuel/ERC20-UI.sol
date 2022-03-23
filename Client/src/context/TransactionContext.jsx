@@ -3,6 +3,8 @@ import { ethers } from "ethers";
 
 import { contractABI, contractAddress } from "../utils/constants";
 
+import Transactions from "../components/Transactions";
+
 export const TransactionContext = React.createContext();
 
 const { ethereum } = window;
@@ -10,9 +12,9 @@ const { ethereum } = window;
 const createEthereumContract = () => {
   const provider = new ethers.providers.Web3Provider(ethereum);
   const signer = provider.getSigner();
-  const transactionsContract = new ethers.Contract(contractAddress, contractABI, signer);
+  const KokoTokenContract = new ethers.Contract(contractAddress, contractABI, signer);
 
-  return transactionsContract;
+  return KokoTokenContract;
 };
 
 export const TransactionsProvider = ({ children }) => {
@@ -29,9 +31,9 @@ export const TransactionsProvider = ({ children }) => {
   const getAllTransactions = async () => {
     try {
       if (ethereum) {
-        const transactionsContract = createEthereumContract();
+        const KokoTokenContract = createEthereumContract();
 
-        const availableTransactions = await transactionsContract.getAllTransactions();
+        const availableTransactions = await KokoTokenContract.getAllTransactions();
 
         const structuredTransactions = availableTransactions.map((transaction) => ({
           addressTo: transaction.receiver,
@@ -39,7 +41,7 @@ export const TransactionsProvider = ({ children }) => {
           timestamp: new Date(transaction.timestamp.toNumber() * 1000).toLocaleString(),
           message: transaction.message,
           keyword: transaction.keyword,
-          amount: parseInt(transaction.amount._hex) / (10 ** 18)
+          amount: parseInt((transaction.amount._hex) / (10 ** 18)),
         }));
 
         console.log(structuredTransactions);
@@ -74,8 +76,8 @@ export const TransactionsProvider = ({ children }) => {
   const checkIfTransactionsExists = async () => {
     try {
       if (ethereum) {
-        const transactionsContract = createEthereumContract();
-        const currentTransactionCount = await transactionsContract.getTransactionCount();
+        const KokoTokenContract = createEthereumContract();
+        const currentTransactionCount = await KokoTokenContract.getTransactionCount();
 
         window.localStorage.setItem("transactionCount", currentTransactionCount);
       }
@@ -105,7 +107,7 @@ export const TransactionsProvider = ({ children }) => {
     try {
       if (ethereum) {
         const { addressTo, amount, keyword, message } = formData;
-        const transactionsContract = createEthereumContract();
+        const KokoTokenContract = createEthereumContract();
         const parsedAmount = ethers.utils.parseEther(amount);
 
         await ethereum.request({
@@ -118,7 +120,7 @@ export const TransactionsProvider = ({ children }) => {
           }],
         });
 
-        const transactionHash = await transactionsContract.addToBlockchain(addressTo, parsedAmount, message, keyword);
+        const transactionHash = await KokoTokenContract.addToBlockchain(addressTo, parsedAmount, message, keyword);
 
         setIsLoading(true);
         console.log(`Loading - ${transactionHash.hash}`);
@@ -126,7 +128,7 @@ export const TransactionsProvider = ({ children }) => {
         console.log(`Success - ${transactionHash.hash}`);
         setIsLoading(false);
 
-        const transactionsCount = await transactionsContract.getTransactionCount();
+        const transactionsCount = await Transactions.getTransactionCount();
 
         setTransactionCount(transactionsCount.toNumber());
         window.location.reload();

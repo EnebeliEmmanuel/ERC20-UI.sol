@@ -653,6 +653,11 @@
     "@nodelib/fs.scandir" "2.1.5"
     "fastq" "^1.6.0"
 
+"@popperjs/core@^2.9.3":
+  "integrity" "sha512-q/ytXxO5NKvyT37pmisQAItCFqA7FD/vNb8dgaJy3/630Fsc+Mz9/9f2SziBoIZ30TJooXyTwZmhi1zjXmObYg=="
+  "resolved" "https://registry.npmjs.org/@popperjs/core/-/core-2.11.4.tgz"
+  "version" "2.11.4"
+
 "@rollup/pluginutils@^4.1.1":
   "integrity" "sha512-ROn4qvkxP9SyPeHaf7uQC/GPFY6L/OWy9+bd9AwcjOAWQwxRscoEyAUD8qCY5o5iL4jqQwoLk2kaTKJPb/HwzQ=="
   "resolved" "https://registry.npmjs.org/@rollup/pluginutils/-/pluginutils-4.1.2.tgz"
@@ -1592,6 +1597,14 @@
   "resolved" "https://registry.npmjs.org/flatted/-/flatted-3.2.4.tgz"
   "version" "3.2.4"
 
+"flowbite@^1.4.1":
+  "integrity" "sha512-65QrhBUVa7BHGDLM1t1vySgS8unlxTw8PQfJXraTj5Fez+OE17XOTBuOSVk3DCDjAicWBydD+Gkmz53S/8IJ2A=="
+  "resolved" "https://registry.npmjs.org/flowbite/-/flowbite-1.4.1.tgz"
+  "version" "1.4.1"
+  dependencies:
+    "@popperjs/core" "^2.9.3"
+    "mini-svg-data-uri" "^1.4.3"
+
 "fraction.js@^4.1.1":
   "integrity" "sha512-o2RiJQ6DZaR/5+Si0qJUIy637QMRudSi9kU/FFzx9EZazrIdnBgpU+3sEWCxAVhH2RtxW2Oz+T4p2o8uOPVcgA=="
   "resolved" "https://registry.npmjs.org/fraction.js/-/fraction.js-4.1.2.tgz"
@@ -2144,7 +2157,7 @@
     "braces" "^3.0.1"
     "picomatch" "^2.2.3"
 
-"mini-svg-data-uri@^1.2.3":
+"mini-svg-data-uri@^1.2.3", "mini-svg-data-uri@^1.4.3":
   "integrity" "sha512-gSfqpMRC8IxghvMcxzzmMnWpXAChSA+vy4cia33RgerMS8Fex95akUyQZPbxJJmeBGiGmK7n/1OpUX8ksRjIdA=="
   "resolved" "https://registry.npmjs.org/mini-svg-data-uri/-/mini-svg-data-uri-1.4.3.tgz"
   "version" "1.4.3"
@@ -2781,6 +2794,11 @@
   "integrity" "sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w=="
   "resolved" "https://registry.npmjs.org/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz"
   "version" "1.0.0"
+
+"sweetalert2@^11.4.6":
+  "integrity" "sha512-7UDJV8etrJQ6vJGh88k7D63qBKtwEl8JV7zIxmO2Frp8ZGQDgQQC6f9ivqiVwLRxoEyfxsn/v3T6Zykk7/vlEg=="
+  "resolved" "https://registry.npmjs.org/sweetalert2/-/sweetalert2-11.4.6.tgz"
+  "version" "11.4.6"
 
 "tailwindcss@^2.2.19", "tailwindcss@>=2.0.0":
   "integrity" "sha512-6Ui7JSVtXadtTUo2NtkBBacobzWiQYVjYW0ZnKaP9S1ZCKQ0w7KVNz+YSDI/j7O7KCMHbOkz94ZMQhbT9pOqjw=="

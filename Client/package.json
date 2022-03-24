@@ -17,7 +17,8 @@
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "react-icons": "^4.3.1",
-    "sweetalert2": "^11.4.6"
+    "sweetalert2": "^11.4.6",
+    "vercel": "^24.0.1"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^1.0.0",
